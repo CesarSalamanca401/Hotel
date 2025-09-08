@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel California</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    /* HEADER con absolute */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #444;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* HERO */
+    .hero {
+      height: 400px;
+      background: url("https://picsum.photos/1200/400?hotel") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black;
+      margin-top: 80px;
+    }
+
+    /* SECCIÓN HABITACIONES */
+    .habitaciones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card p {
+      padding: 0 10px 20px;
+    }
+
+    /* SERVICIOS */
+    .servicios {
+      padding: 40px;
+      background: #eee;
+      text-align: center;
+    }
+
+    .servicios h2 {
+      margin-bottom: 20px;
+    }
+
+    .servicios-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .servicio {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      flex: 1 1 200px;
+      max-width: 220px;
+    }
+
+    /* GALERÍA */
+    .galeria {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .galeria h2 {
+      margin-bottom: 20px;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* OPINIONES */
+    .opiniones {
+      background: #f9f9f9;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .opiniones h2 {
+      margin-bottom: 20px;
+    }
+
+    .opiniones .review {
+      max-width: 600px;
+      margin: 20px auto;
+      font-style: italic;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Hotel California</h1>
+    <div class="nav">
+      <a href="#">Inicio</a>
+      <a href="#">Habitaciones</a>
+      <a href="#">Servicios</a>
+      <a href="#">Galería</a>
+      <a href="#">Reservas</a>
+      <a href="#">Opiniones</a>
+      <a href="#">Contacto</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    Bienvenido al Paraíso
+  </div>
+
+  <!-- HABITACIONES -->
+  <section class="habitaciones">
+    <div class="card">
+      <img src="https://picsum.photos/400/200?room1" alt="Habitación estándar">
+      <h3>Habitación Estándar</h3>
+      <p>Una opción cómoda y económica para tu estadía.</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/200?room2" alt="Suite">
+      <h3>Suite Deluxe</h3>
+      <p>Con vista al mar y todas las comodidades de lujo.</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/200?room3" alt="Familiar">
+      <h3>Habitación Familiar</h3>
+      <p>Espaciosa y perfecta para disfrutar con toda la familia.</p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios">
+    <h2>Servicios</h2>
+    <div class="servicios-grid">
+      <div class="servicio">🏊 Piscina</div>
+      <div class="servicio">🍽️ Restaurante</div>
+      <div class="servicio">💆 Spa</div>
+      <div class="servicio">🏋️ Gimnasio</div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="galeria">
+    <h2>Galería</h2>
+    <div class="galeria-grid">
+      <img src="https://picsum.photos/400/300?1" alt="Hotel foto 1">
+      <img src="https://picsum.photos/400/300?2" alt="Hotel foto 2">
+      <img src="https://picsum.photos/400/300?3" alt="Hotel foto 3">
+      <img src="https://picsum.photos/400/300?4" alt="Hotel foto 4">
+      <img src="https://picsum.photos/400/300?5" alt="Hotel foto 5">
+      <img src="https://picsum.photos/400/300?6" alt="Hotel foto 6">
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="opiniones">
+    <h2>Opiniones de Nuestros Clientes</h2>
+    <div class="review">"Una experiencia maravillosa, las habitaciones eran muy cómodas y el servicio excelente." – Ana P.</div>
+    <div class="review">"La mejor estancia de mi vida, el spa y la piscina son increíbles." – Carlos G.</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>📍 Dirección: Calle Falsa 123, Ciudad Paraíso</p>
+    <p>📞 Teléfono: +57 300 123 4567</p>
+    <p>✉️ Email: contacto@hotelcalifornia.com</p>
+    <p>&copy; 2025 Hotel California - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
+
