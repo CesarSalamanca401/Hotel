@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitaciones - Hotel California</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.3s;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+        }
+
+        .seccion-habitaciones {
+            background-color: #fff;
+            padding-top: 100px;
+        }
+
+        .habitaciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .habitacion-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .habitacion-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .habitacion-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .habitacion-card h3 {
+            font-size: 1.5rem;
+            margin: 15px 0 10px;
+            color: #007bff;
+        }
+
+        .habitacion-card p {
+            padding: 0 20px 20px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                height: auto;
+                position: relative;
+            }
+
+            .header-title {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .nav a {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .nav {
+                flex-direction: column;
+            }
+            .nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Hotel California</h1>
+        <nav class="nav">
+            <a href="Presentacion.html">Inicio</a>
+            <a href="Habitaciones.html">Habitaciones</a>
+            <a href="Servicios.html">Servicios</a>
+            <a href="Gastronomia.html">Gastronomía</a>
+            <a href="Deportes.html">Deportes</a>
+            <a href="Reservas.html">Reservas</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion-habitaciones">
+            <h2>Nuestras Habitaciones</h2>
+            <div class="habitaciones-grid">
+                <div class="habitacion-card">
+                    <img src="img/HabitacionSencilla.png" alt="Habitación Sencilla">
+                    <h3>Habitación Sencilla</h3>
+                    <p>Perfecta para viajeros solitarios o parejas que buscan comodidad. Cuenta con una cama queen y baño privado.</p>
+                </div>
+                <div class="habitacion-card">
+                    <img src="img/HabitacionDoble.png" alt="Habitación Doble">
+                    <h3>Habitación Doble</h3>
+                    <p>Ideal para familias o amigos. Dispone de dos camas dobles y un amplio espacio para relajarse.</p>
+                </div>
+                <div class="habitacion-card">
+                    <img src="img/SuiteDeLujo.png" alt="Suite de Lujo">
+                    <h3>Suite de Lujo</h3>
+                    <p>La opción más exclusiva con vistas panorámicas, jacuzzi privado y todas las comodidades de primera clase.</p>
+                </div>
+                <div class="habitacion-card">
+                    <img src="img/HabitacionFamiliar.png" alt="Habitación Familiar">
+                    <h3>Habitación Familiar</h3>
+                    <p>Con múltiples camas y espacio extra, es la elección perfecta para grupos grandes o familias con niños.</p>
+                </div>
+                <div class="habitacion-card">
+                    <img src="img/HabitacionSuperior.png" alt="Habitación Superior">
+                    <h3>Habitación Superior</h3>
+                    <p>Diseñada con un toque de modernidad, ofrece un espacio más amplio y amenidades de alta calidad.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h3>Contacto</h3>
+        <p><strong>Teléfono:</strong> +57 310 123 4567</p>
+        <p><strong>Email:</strong> info@hotelcalifornia.com</p>
+        <p><strong>Dirección:</strong> Calle 10 # 5-22, San Gil, Santander, Colombia</p>
+    </footer>
+
+</body>
+</html>

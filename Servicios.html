@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Hotel California</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.3s;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+        }
+
+        .seccion-servicios {
+            background-color: #e9ecef;
+            padding-top: 100px;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .servicio-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .servicio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .servicio-item i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .servicio-item h3 {
+            font-size: 1.25rem;
+            margin: 0 0 10px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                height: auto;
+                position: relative;
+            }
+
+            .header-title {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .nav a {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .nav {
+                flex-direction: column;
+            }
+            .nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Hotel California</h1>
+        <nav class="nav">
+            <a href="Presentacion.html">Inicio</a>
+            <a href="Habitaciones.html">Habitaciones</a>
+            <a href="Servicios.html">Servicios</a>
+            <a href="Gastronomia.html">Gastronomía</a>
+            <a href="Deportes.html">Deportes</a>
+            <a href="Reservas.html">Reservas</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion-servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-item">
+                    <i class="fa-solid fa-wifi"></i>
+                    <h3>Wi-Fi Gratuito</h3>
+                    <p>Conexión a internet de alta velocidad en todo el hotel.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-swimming-pool"></i>
+                    <h3>Piscina</h3>
+                    <p>Relájate y disfruta del sol en nuestra piscina al aire libre.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Restaurante</h3>
+                    <p>Deléitate con la gastronomía local en nuestro restaurante.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-spa"></i>
+                    <h3>Spa</h3>
+                    <p>Disfruta de tratamientos de relajación y masajes.</p>
+                </div>
+                 <div class="servicio-item">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <h3>Gimnasio</h3>
+                    <p>Mantente en forma con nuestro gimnasio completamente equipado.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-bus-simple"></i>
+                    <h3>Transporte</h3>
+                    <p>Servicio de transporte al y desde el aeropuerto.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h3>Contacto</h3>
+        <p><strong>Teléfono:</strong> +57 310 123 4567</p>
+        <p><strong>Email:</strong> info@hotelcalifornia.com</p>
+        <p><strong>Dirección:</strong> Calle 10 # 5-22, San Gil, Santander, Colombia</p>
+    </footer>
+
+</body>
+</html>

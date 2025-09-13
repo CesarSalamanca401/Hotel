@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Hotel California</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.3s;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+        }
+
+        .seccion-reservas {
+            background-color: #fff;
+            padding-top: 100px;
+            text-align: left;
+        }
+
+        .formulario-reserva {
+            max-width: 600px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .formulario-reserva label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .formulario-reserva input,
+        .formulario-reserva select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .formulario-reserva button {
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .formulario-reserva button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                height: auto;
+                position: relative;
+            }
+
+            .header-title {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .nav a {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .nav {
+                flex-direction: column;
+            }
+            .nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Hotel California</h1>
+        <nav class="nav">
+            <a href="Presentacion.html">Inicio</a>
+            <a href="Habitaciones.html">Habitaciones</a>
+            <a href="Servicios.html">Servicios</a>
+            <a href="Gastronomia.html">Gastronomía</a>
+            <a href="Deportes.html">Deportes</a>
+            <a href="Reservas.html">Reservas</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion-reservas">
+            <h2>Haz tu Reserva</h2>
+            <p>Llena el formulario para solicitar tu estancia. Nos pondremos en contacto contigo para confirmar.</p>
+            <form class="formulario-reserva">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="llegada">Fecha de Llegada:</label>
+                <input type="date" id="llegada" name="llegada" required>
+
+                <label for="salida">Fecha de Salida:</label>
+                <input type="date" id="salida" name="salida" required>
+
+                <label for="personas">Número de Personas:</label>
+                <input type="number" id="personas" name="personas" min="1" required>
+
+                <label for="habitacion">Tipo de Habitación:</label>
+                <select id="habitacion" name="habitacion">
+                    <option value="sencilla">Sencilla</option>
+                    <option value="doble">Doble</option>
+                    <option value="suite">Suite de Lujo</option>
+                    <option value="familiar">Familiar</option>
+                    <option value="superior">Superior</option>
+                </select>
+
+                <button type="submit">Solicitar Reserva</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h3>Contacto</h3>
+        <p><strong>Teléfono:</strong> +57 310 123 4567</p>
+        <p><strong>Email:</strong> info@hotelcalifornia.com</p>
+        <p><strong>Dirección:</strong> Calle 10 # 5-22, San Gil, Santander, Colombia</p>
+    </footer>
+
+</body>
+</html>
