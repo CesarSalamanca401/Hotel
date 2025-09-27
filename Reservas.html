@@ -5,13 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas - Hotel California</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #004d6a; 
+            --secondary-color: #f5b95a; 
+            --dark-color: #1e1e1e;
+            --light-color: #f0f3f5;
+            --text-color: #444;
+            --light-text-color: #ccc;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--light-color);
+            color: var(--text-color);
             line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--dark-color);
+            font-weight: 700;
         }
 
         .header {
@@ -20,54 +38,53 @@
             left: 0;
             width: 100%;
             background-color: #fff;
-            padding: 15px 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: background-color 0.3s;
+            transition: padding 0.3s;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #222;
+            font-size: 2.2rem;
         }
 
         .nav {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
+            margin-right: 20px;
         }
 
         .nav a {
             text-decoration: none;
-            color: #555;
+            color: var(--text-color);
             font-size: 1rem;
             font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            padding: 10px 18px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
         }
 
         .nav a:hover {
-            background-color: #007bff;
+            background-color: var(--primary-color);
             color: #fff;
+            transform: translateY(-2px);
         }
 
         section {
-            padding: 80px 20px;
+            padding: 100px 20px 60px;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
-            color: #333;
             position: relative;
             display: inline-block;
         }
@@ -75,16 +92,22 @@
         h2::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 4px;
-            background-color: #007bff;
+            width: 80px;
+            height: 5px;
+            background-color: var(--secondary-color);
             margin: 10px auto 0;
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
         }
 
         .seccion-reservas {
             background-color: #fff;
-            padding-top: 100px;
-            text-align: left;
+            padding-top: 120px;
         }
 
         .formulario-reserva {
@@ -96,92 +119,84 @@
             padding: 30px;
             border: 1px solid #ddd;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--light-color);
         }
 
         .formulario-reserva label {
             font-weight: bold;
             margin-bottom: 5px;
+            color: var(--primary-color);
         }
 
         .formulario-reserva input,
         .formulario-reserva select {
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--primary-color);
             border-radius: 5px;
             font-size: 1rem;
+            background-color: #fff;
         }
 
         .formulario-reserva button {
             padding: 15px;
-            background-color: #007bff;
-            color: #fff;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             font-size: 1.1rem;
+            font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .formulario-reserva button:hover {
-            background-color: #0056b3;
+            background-color: #e0a349;
+            transform: translateY(-2px);
         }
 
         .footer {
-            background-color: #333;
+            background-color: var(--dark-color);
             color: #fff;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
             margin-top: 50px;
         }
 
         .footer h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
+            color: var(--secondary-color);
         }
 
         .footer p {
             margin: 5px 0;
-            color: #ccc;
+            color: var(--light-text-color);
         }
 
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                text-align: center;
                 padding: 15px;
-                height: auto;
-                position: relative;
-            }
-
-            .header-title {
-                justify-content: center;
-                margin-bottom: 15px;
+                position: static;
             }
 
             .nav {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 10px;
+                margin-top: 15px;
+                margin-right: 0;
             }
 
             .nav a {
-                padding: 6px 10px;
+                padding: 8px 12px;
                 font-size: 0.9rem;
             }
-        }
 
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            .nav {
-                flex-direction: column;
-            }
-            .nav a {
-                width: 100%;
-                box-sizing: border-box;
+            h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -196,6 +211,7 @@
             <a href="Servicios.html">Servicios</a>
             <a href="Gastronomia.html">Gastronomía</a>
             <a href="Deportes.html">Deportes</a>
+            <a href="index.html#contacto">Contacto</a>
             <a href="Reservas.html">Reservas</a>
         </nav>
     </header>
@@ -227,6 +243,7 @@
                     <option value="suite">Suite de Lujo</option>
                     <option value="familiar">Familiar</option>
                     <option value="superior">Superior</option>
+                    <option value="superior">Habitacion de Lujo</option>
                 </select>
 
                 <button type="submit">Solicitar Reserva</button>
